@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="C:\Users\Usuario_lap\OneDrive\GrupoFormula\WB055J451\Homer_Seed_Project_ASP_MVC_5\Homer_MVC\obj\Debug\Package\PackageTmp" managedRuntimeVersion="v4.0" />
+  <setAcl path="C:\Users\Usuario_lap\OneDrive\GrupoFormula\WB055J451\Homer_Seed_Project_ASP_MVC_5\Homer_MVC\obj\Debug\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="C:\Users\Usuario_lap\OneDrive\GrupoFormula\WB055J451\Homer_Seed_Project_ASP_MVC_5\Homer_MVC\obj\Debug\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+</sitemanifest>

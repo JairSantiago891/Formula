@@ -1,0 +1,20 @@
+﻿@model  Homer_MVC.Models.EncoderIp 
+
+@if (Session["Encoder"] != null)
+{
+    <div class="col-lg-2  ">
+        <br /> <br />  @Html.ActionLink(" Editar Plaza", "Encoder", null, new { data_modal = "", @class = "btn btn-primary-formula fa fa-pencil-square-o " + ViewBag.edit })
+    </div>
+
+    <div class="col-lg-4 ">
+        <br /> <br />  @Html.ActionLink(" Eliminar Plaza", "Encoder", null, new { data_modal = "", @class = "btn btn-primary-formula fa fa-eraser " + ViewBag.edit })
+    </div>
+}
+else
+{ 
+    <div class="col-lg-2 ">
+        <br /> <br />  @Html.ActionLink(" Agregar Plaza", "Encoder", null, new { data_modal = "", @class = "btn btn-primary-formula fa fa-plus-circle" }) 
+    </div> 
+
+}
+

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="GrupoFormulaEntities-Web.config Connection String" description="GrupoFormulaEntities Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="metadata=res://*/ModelER-GrupoFormula.csdl|res://*/ModelER-GrupoFormula.ssdl|res://*/ModelER-GrupoFormula.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=JAIR-SANTIAGO\SQLEXPRESS;initial catalog=GrupoFormula;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Usuario_lap\\source\\repos\\AdminPlaza\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='GrupoFormulaEntities']/@connectionString" />
+  </parameter>
+  <parameter name="GrupoFormula-Web.config Connection String" description="GrupoFormula Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="data source=JAIR-SANTIAGO\SQLEXPRESS;initial catalog=GrupoFormula;integrated security=True;MultipleActiveResultSets=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Usuario_lap\\source\\repos\\AdminPlaza\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='GrupoFormula']/@connectionString" />
+  </parameter>
+  <parameter name="GrupoFormulaAWS-Web.config Connection String" description="GrupoFormulaAWS Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="data source=admin.c823ybkm59xj.us-east-2.rds.amazonaws.com;initial catalog=GrupoFormula;user id=admin;password=Epidemia22;MultipleActiveResultSets=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Usuario_lap\\source\\repos\\AdminPlaza\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='GrupoFormulaAWS']/@connectionString" />
+  </parameter>
+  <parameter name="POSEntities-Web.config Connection String" description="POSEntities Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="metadata=res://*/Model.csdl|res://*/Model.ssdl|res://*/Model.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=JAIR-SANTIAGO\SQLEXPRESS;initial catalog=GrupoFormula;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Usuario_lap\\source\\repos\\AdminPlaza\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='POSEntities']/@connectionString" />
+  </parameter>
+  <parameter name="GrupoFormulaEntitiesAWS-Web.config Connection String" description="GrupoFormulaEntitiesAWS Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="metadata=res://*/ModelAWS.csdl|res://*/ModelAWS.ssdl|res://*/ModelAWS.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=admin.c823ybkm59xj.us-east-2.rds.amazonaws.com;initial catalog=GrupoFormula;user id=admin;password=Epidemia22;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Usuario_lap\\source\\repos\\AdminPlaza\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='GrupoFormulaEntitiesAWS']/@connectionString" />
+  </parameter>
+</parameters>

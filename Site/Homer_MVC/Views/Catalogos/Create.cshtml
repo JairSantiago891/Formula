@@ -1,0 +1,22 @@
+﻿@model  Homer_MVC.Models.EncoderIp 
+@{
+    ViewBag.Title = "Alta de Catalogo";
+}
+@Scripts.Render("~/bundles/jqueryval") 
+<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="color-demo"></div>
+        <div class="modal-header">
+            <h4 class="modal-title">@ViewBag.Title</h4>
+        </div>
+        @Html.Partial("General") 
+        <div class="modal-footer">
+            <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
+            <button type="submit" value="Submit" class="btn btn-primary-formula" alt="Submit" id="buttonGuardar">Guardar cambios</button>
+        </div>
+
+    </div>
+</div> 
+
+
+

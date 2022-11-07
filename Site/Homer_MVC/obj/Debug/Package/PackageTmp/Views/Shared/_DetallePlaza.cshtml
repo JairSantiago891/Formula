@@ -1,0 +1,137 @@
+﻿@model  Homer_MVC.Models.PlazaModel
+<div class="panel-body">
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="hpanel">
+                <div class="panel-heading">
+                    <div class="panel-tools">
+                        <a class="showhide"><i class="fa fa-chevron-down" style="color:white"></i></a>
+                    </div>
+                    <i class="fa fa-exclamation" aria-hidden="true"></i>   Datos Generales
+                </div>
+                @Html.HiddenFor(m => m.PlazaId)
+
+                <div class="col-md-8">
+                    <div class="col-lg-4 ">
+                        <h5>Nombre Plaza</h5>
+                        @Html.TextBoxFor(m => m.NombrePlaza,
+                        new
+                        {
+                            @class = "form-control m-b-md",
+                            name = "NombrePlaza",
+
+                            style = "margin: 0 auto;"
+                        })
+                    </div>
+                    <div class="col-lg-4 ">
+                        <h5>Nombre Corto</h5>
+                        @Html.TextBoxFor(m => m.NombreCorto,
+                        new
+                        {
+                            @class = "form-control m-b-md",
+                            name = "NombreCorto",
+                            style = "margin: 0 auto;"
+                        })
+                    </div>
+                    <div class="col-lg-4 ">
+                        <h5>Director</h5>
+                        @Html.TextBoxFor(m => m.NombreDirector,
+                        new
+                        {
+                            @class = "form-control m-b-md",
+                            name = "NombreDirector",
+
+                            style = "margin: 0 auto;"
+                        })
+                    </div>
+
+                    <div class="col-lg-4 ">
+                        <h5>Telefono Director</h5>
+                        @Html.TextBoxFor(m => m.TelefonoDirector,
+                        new
+                        {
+                            @class = "form-control",
+                            name = "TelefonoDirector",
+
+                            style = "margin: 0 auto;"
+                        })
+                    </div>
+
+                    <div class="col-lg-4 ">
+                        <h5>Correo Director</h5>
+                        @Html.TextBoxFor(m => m.CorreoDirector,
+                        new
+                        {
+                            @class = "form-control",
+                            name = "CorreoDirector",
+
+                            style = "margin: 0 auto;"
+                        })
+                    </div>
+
+
+                    <div class="col-lg-4 ">
+                        <h5>Nombre Ingeniero</h5>
+                        @Html.TextBoxFor(m => m.NombreIngeniero,
+                        new
+                        {
+                            @class = "form-control",
+                            name = "NombreIngeniero",
+
+                            style = "margin: 0 auto;"
+                        })
+                    </div>
+                    <div class="col-lg-4 ">
+                        <h5>Telefono Ingeniero</h5>
+                        @Html.TextBoxFor(m => m.TelefonoIngeniero,
+                        new
+                        {
+                            @class = "form-control",
+                            name = "telefonoIngeniero",
+
+                            style = "margin: 0 auto;"
+                        })
+                    </div>
+                    <div class="col-lg-4 ">
+                        <h5>Correo Ingeniero</h5>
+                        @Html.TextBoxFor(m => m.CorreoIngeniero,
+                        new
+                        {
+                            @class = "form-control",
+                            name = "emailIngeniero",
+
+                            style = "margin: 0 auto;"
+                        })
+                    </div>
+                    <div class="col-lg-4 ">
+                        <h5>Plaza Activa</h5>
+                        @Html.CheckBoxFor(m => m.PlazaActiva,
+                        new
+                        {
+                            @class = "icheckbox_square-green checked",
+                            name = "plazaActiva",
+                            style = "margin: 0 auto;"
+                        })
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <h5>Logo</h5>
+                    @Html.TextBoxFor(m => m.Logo, new { type = "file", name = "File", id = "File", src = @ViewBag.imageDummy, accept = ".png, .jpg, .jpeg" })
+
+                    <div class="col-md-2">
+                        <img id="Image" alt="Submit" width="250px" height="120px" border="1">
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Logo)
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
+        <button type="submit" value="Submit" class="btn btn-primary-formula" alt="Submit" id="buttonGuardar">Guardar cambios</button>
+    </div>
+</div>

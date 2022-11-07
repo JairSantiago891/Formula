@@ -1,0 +1,89 @@
+﻿@model  Homer_MVC.Models.EncoderIp
+@{
+    ViewBag.Title = "Datos Generales";
+}
+@using Homer_MVC.Models;
+@Html.Hidden("RedirectTo", Url.Action("Detalle", "Catalogos"))
+
+<div class="contentFormula animate-panel">
+    <div class="hpanel">
+        @Html.Partial("_LecturaPlazas")
+        <div class="panel-body">
+
+            <div class="form-group">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="hpanel">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a data-toggle="tab" href="#tab-1" aria-expanded="true"><i class="fa fa-plug fa-1x" aria-hidden="true"></i> EndoderIP</a></li>
+                                <li><a data-toggle="tab" href="#tab-2" aria-expanded="false"><i class="fa fa-connectdevelop-1x" aria-hidden="true"></i> Microfonos</a></li>
+                                <li><a data-toggle="tab" href="#tab-3" aria-expanded="false"><i class="fa fa-microphone fa-1x" aria-hidden="true"></i> Procesadores de Audio</a></li>
+                                <li><a data-toggle="tab" href="#tab-4" aria-expanded="false"><i class="fa fa-file-audio-o fa-1x" aria-hidden="true"></i> Radio Enlaces </a></li>
+                                <li><a data-toggle="tab" href="#tab-5" aria-expanded="false"><i class="fa fa-deaf fa-1x" aria-hidden="true"></i> Receptores Satelitales</a></li>
+                                <li><a data-toggle="tab" href="#tab-6" aria-expanded="false"><i class="fa fa-mobile fa-1x" aria-hidden="true"></i> Telefonos</a></li>
+                                <li><a data-toggle="tab" href="#tab-7" aria-expanded="false"><i class="fa fa-wifi fa-1x" aria-hidden="true"></i> Transmisores de Plaza</a></li>
+
+                            </ul>
+                            <div class="tab-content">
+                                <div id="tab-1" class="tab-pane active">
+                                    @Html.Partial("General",   (EncoderIp) Session["IdEncoder"])                                     
+                                    @Html.Partial("_RequestCatalogos")
+                                </div>
+                                <div id="tab-2" class="tab-pane ">
+                                    @Html.Partial("General", new EncoderIp("Microfonos"))
+                                    @Html.Partial("_RequestCatalogos")
+                                </div>
+                                <div id="tab-3" class="tab-pane ">
+                                    @Html.Partial("General", new EncoderIp("Procesadores"))
+                                    @Html.Partial("_RequestCatalogos")
+                                </div>
+                                <div id="tab-4" class="tab-pane ">
+                                    @Html.Partial("General", new EncoderIp("Radio"))
+                                    @Html.Partial("_RequestCatalogos")
+                                </div>
+                                <div id="tab-5" class="tab-pane ">
+                                    @Html.Partial("General", new EncoderIp("Receptores"))
+                                    @Html.Partial("_RequestCatalogos")
+                                </div>
+                                <div id="tab-6" class="tab-pane ">
+                                    @Html.Partial("General", new EncoderIp("Telefonos"))
+                                    @Html.Partial("_RequestCatalogos")
+                                </div>
+                                <div id="tab-7" class="tab-pane ">
+                                    @Html.Partial("General", new EncoderIp("Transmisores"))
+                                    @Html.Partial("_RequestCatalogos")
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                  
+                 
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+
+<script src="~/Scripts/jquery-3.6.1.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#PlazaList").change(function () {
+            var a = $("#PlazaList Option:Selected").text();
+            var v = $("#PlazaList Option:Selected").val();
+            /* $("#director").val(a);*/
+            var url = $("#RedirectTo").val() + "?valor=" + v;
+            location.href = url;
+        })
+    })
+</script> 

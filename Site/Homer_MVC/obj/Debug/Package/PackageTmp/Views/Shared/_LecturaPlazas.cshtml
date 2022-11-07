@@ -1,0 +1,33 @@
+﻿ 
+@{
+//ViewBag.Title = "_LecturaPlazas";
+}
+<div class="panel-body">
+
+    <div class="form-group">
+
+        <div class="col-sm-6">
+            <h5>Plaza</h5>
+            <select id="PlazaList" class="form-control">
+                <option style="display:none">Seleccione una Plaza</option>
+                @foreach (var plaza in (List<Homer_MVC.Models.JsonRequest>)Session["plaza"])
+                {
+                    if (ViewBag.PlazaId == @plaza.PlazaId)
+                    {
+                        <option value="@plaza.PlazaId" selected> @plaza.NombrePlaza</option>
+                    }
+                    else
+                    {
+                        <option value="@plaza.PlazaId" > @plaza.NombrePlaza</option>
+                    }
+                }
+            </select>
+        </div>
+        <div class="col-sm-6">
+            <h5>Módulo</h5>
+            <select class="form-control col-sm" name="account">
+                <option>Información</option>
+            </select>
+        </div>
+    </div>
+</div>

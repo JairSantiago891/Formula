@@ -1,0 +1,29 @@
+﻿@model  Homer_MVC.Models.JsonRequest
+@{
+    ViewBag.Title = "Catalogos Generales";
+}
+@using Homer_MVC.Models;
+@Html.Hidden("RedirectTo", Url.Action("Detalle", "Main"))
+
+<div class="contentFormula animate-panel">
+    <div class="hpanel">
+        @Html.Partial("_LecturaPlazas")
+        @Html.Partial("_Plaza")
+
+    </div>
+</div>
+
+
+<script src="~/Scripts/jquery-3.6.1.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#PlazaList").change(function () {
+            var a = $("#PlazaList Option:Selected").text();
+            var v = $("#PlazaList Option:Selected").val();
+            /* $("#director").val(a);*/
+            var url = $("#RedirectTo").val() + "?valor=" + v;
+            location.href = url;
+        })
+    })
+</script> 

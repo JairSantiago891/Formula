@@ -1,0 +1,52 @@
+﻿@model Homer_MVC.Models.PlazaModel
+@{
+    ViewBag.Title = "Eliminación de Plaza";
+}
+@Scripts.Render("~/bundles/jqueryval")
+<section>
+
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="color-demo"></div>
+            <div class="modal-header">
+                <h4 class="modal-title">@ViewBag.Title</h4>
+            </div>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="modal-shadow text-center">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4>
+                            ¿Está seguro de querer la Plaza:
+                            @Html.DisplayFor(m => m.NombrePlaza)?
+                        </h4>
+                    </div>
+                </div>
+
+                <div class="panel-body"> 
+                    @using (Html.BeginForm())
+                    {
+                        <div class="form-group">
+                            <div>
+                                 
+
+                                <input type="submit" value="Eliminar" class="btn btn-danger " />
+                                <input type="button" value="Cancelar" class="btn btn-warning" data-dismiss="modal" />
+                            </div>
+                        </div>
+                    }
+                </div>
+
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    
+
+</section>

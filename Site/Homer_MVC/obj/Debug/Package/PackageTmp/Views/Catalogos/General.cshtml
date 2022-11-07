@@ -1,0 +1,72 @@
+﻿@model  Homer_MVC.Models.EncoderIp
+
+
+<div class="panel-body">
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="hpanel">
+                <div class="panel-heading">
+                    <div class="panel-tools">
+                        <a class="showhide"><i class="fa fa-chevron-down" style="color:white"></i></a>
+                    </div>
+                    <i class="fa fa-exclamation" aria-hidden="true"></i>   Datos Generales
+                </div>
+                
+                <div class="col-md-12">
+                    <div class="col-lg-6 ">
+                        <h5>Activo Fijo</h5>
+
+                        @if ( Session["Status"] == null || Session["Status"].ToString () == "disabled")
+                        {
+                            @Html.TextBoxFor(m => m.ActivoFijo,
+                          new
+                          {
+                              @class = "form-control m-b-md",
+                              name = "ActivoFijo",
+                              @disabled = "disabled",
+                              style = "margin: 0 auto;"
+                          })
+
+                        }
+                        else
+                        {
+                            @Html.TextBoxFor(m => m.ActivoFijo,
+                                   new
+                                   {
+                                       @class = "form-control m-b-md",
+                                       name = "ActivoFijo",                                     
+                                       style = "margin: 0 auto;"
+                                   })
+                        }
+
+
+
+                    </div>
+
+                    <div class="col-lg-4 ">
+                        <h5>Serie</h5>
+                        @Html.TextBoxFor(m => m.Serie,
+                        new
+                        {
+                            @class = "form-control m-b-md",
+                            name = "Serie",
+                            @disabled = "disabled",
+                            style = "margin: 0 auto;"
+                        })
+                    </div>
+                    <div class="col-lg-4 ">
+                        <h5>   <br />   <br />Fecha de Compra</h5>
+                        @if (Session["IdEncoder"] != null)
+                        {
+                            @Html.TextBoxFor(m => m.FechaCompra, new { @type = "date", @class = "form-control datepicker", @disabled = "disabled" })
+                        }
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div> 
+</div>

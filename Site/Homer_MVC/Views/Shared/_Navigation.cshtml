@@ -1,0 +1,18 @@
+﻿<div id="navigation">
+   
+
+    <ul class="nav metismenu" id="side-menu">
+        <li class="@Html.IsSelected(action: "Index")">
+            <a href="@Url.Action("Index", "Main")"><i class="fa fa-briefcase fa-2x" aria-hidden="true"></i>  INFORMACIÓN PLAZAS</a>
+        </li> 
+        <li class="@Html.IsSelected(action: "Index")">
+            <a href="@Url.Action("Index", "Catalogos")"><i class="fa fa-book fa-2x" aria-hidden="true"></i> REPORTES</a>            
+        </li>
+        <li class="@Html.IsSelected(action: "Index")">
+            <a href="@Url.Action("Index", "Catalogos")"><i class="fa fa-paper-plane-o fa-2x" aria-hidden="true"></i> CATALOGOS</a>
+        </li>
+        <li class="@Html.IsSelected(action: "Index")">
+            <a href="@Url.Action("Index", "Catalogos")"><i class="fa fa-cog fa-2x" aria-hidden="true"></i>CONTROL DE ACCESO</a>    
+        </li>
+    </ul>
+</div>

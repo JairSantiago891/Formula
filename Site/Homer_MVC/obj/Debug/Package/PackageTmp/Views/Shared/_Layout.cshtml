@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Grupo Formula | @ViewBag.Title</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+    <!-- Primary vendor style -->
+    @Styles.Render("~/bundles/font-awesome/css")
+    @Styles.Render("~/bundles/bootstrap/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <!-- Add local styles, mostly for plugins css file -->
+    @if (IsSectionDefined("Styles"))
+    {@RenderSection("Styles", required: false)}
+
+    <!-- Primary HOMER style -->
+    @Styles.Render("~/bundles/homer/css")
+</head>
+<body class="@Html.PageClass()">
+
+    <div id="header">
+        @Html.Partial("_Header")
+    </div>
+    <aside id="menu">
+        @Html.Partial("_Navigation")
+    </aside>
+    <div id="wrapper">
+        @RenderBody()
+        @Html.Partial("_Footer")
+    </div>
+    @Scripts.Render("~/bundles/jquery/js")
+    @Scripts.Render("~/bundles/bootstrap/js")
+    @Scripts.Render("~/bundles/homer/js")
+    @Scripts.Render("~/bundles/modalform")
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+<div id='modalGenerica' class='modal fade in'>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            @using (Html.BeginForm("Create", @Html.PageController(), FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "return validateForm()", name = "myForm" }))
+            {
+                <div id='contentModal'></div>
+            }
+        </div>
+    </div>
+</div>

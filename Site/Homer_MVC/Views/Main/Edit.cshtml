@@ -1,0 +1,69 @@
+﻿@model  Homer_MVC.Models.PlazaModel
+@{
+    ViewBag.Title = "Actualiza Plaza";
+}
+
+@Scripts.Render("~/bundles/jqueryval")
+<script type="text/javascript">
+    function fileCheck(obj) {
+        var fileExtension = ['jpeg', 'jpg', 'png', 'gif', 'bmp'];
+        if ($.inArray($(obj).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
+            swal("Formato incorrecto", "Favor de capturar solo imagenes con los formatos '.jpeg','.jpg', '.png', '.gif', '.bmp'", "warning");
+            return false;
+        }
+    }
+</script>
+<script>
+    $(document).ready(() => {
+        $('#File').on('change', function () {
+            var url = URL.createObjectURL(this.files[0]);
+            $('#Image').prop('src', url);
+        });
+        var url = $('#File').attr('src');
+        fetch(url)
+            .then(res => res.blob())
+            .then(blob => {
+                const dt = new ClipboardEvent('').clipboardData || new DataTransfer();
+                dt.items.add(new File([blob], 'some_file_name.ext'));
+                $('#File').prop('files', dt.files);
+                $('#File').trigger('change');
+            })
+    });
+</script>
+
+<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="color-demo"></div>
+        <div class="modal-header">
+            <h4 class="modal-title">@ViewBag.Title</h4>
+        </div>
+        @Html.Partial("_DetallePlaza")
+    </div>
+</div>
+<script>
+
+    function validateForm() {
+        let x = document.forms["myForm"]["NombreDirector"].value;
+        let x1 = document.forms["myForm"]["NombreDirector"].value;
+        let x2 = document.forms["myForm"]["TelefonoDirector"].value;
+        let x3 = document.forms["myForm"]["CorreoDirector"].value;
+        let x4 = document.forms["myForm"]["NombreIngeniero"].value;
+        let x5 = document.forms["myForm"]["TelefonoIngeniero"].value;
+        let x6 = document.forms["myForm"]["CorreoIngeniero"].value;
+        console.log(x);
+        console.log(x2);
+        console.log(x3);
+        console.log(x4);
+        console.log(x5);
+        console.log(x6);
+        if (x == "" || x2 == "" || x3 == "" || x4 == "" || x5 == "" || x6 == "" || x1 == "") {
+            swal("Validación de campo", "Todos los campos son obligatorios", "warning");
+            return false;
+        } else {
+            return true;
+        }
+    }
+</script>
+
+
+
